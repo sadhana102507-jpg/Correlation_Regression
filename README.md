@@ -20,10 +20,67 @@ If y represents the dependent variable and x the independent variable, this rela
 ![image](https://user-images.githubusercontent.com/104613195/168225866-ac8f6610-bdc3-4ac2-a24e-2b24ba08e189.png)
 
 # Program :
-
-![image](https://github.com/ramjan1729/Correlation_Regression/assets/103921593/9eb48cbf-8ca3-4cd9-8440-ff45fd98333e)
-
-
-# Result
-
+```
+Name:SADHANA R
+Register No:25017643
+Slot Name:3P1-1
+```
+```
+import numpy as np
+import math
+import matplotlib.pyplot as plt
+# Input x and y values (space separated), e.g.:
+# x: 1 2 3 4 5
+# y: 2 4 3 5 7
+x = [int(i) for i in input("Enter x values (space separated): ").split()]
+y = [int(i) for i in input("Enter y values (space separated): ").split()]
+if len(x) != len(y):
+  raise SystemExit("Error: x and y must have the same number of values.")
+N = len(x)
+Sx = 0
+Sy = 0
+Sxy = 0
+Sx2 = 0
+Sy2 = 0
+for i in range(N):
+  Sx += x[i]
+  Sy+= y[i]
+  Sxy += x[i] * y[i]
+  Sx2 += x[i]**2
+  Sy2 += y[i]**2
+# Correlation coefficient r
+den = math.sqrt((N * Sx2 - Sx**2) * (N * Sy2 - Sy**2))
+if den == 0:
+  raise SystemExit("Denominator zero when computing correlation.")
+r = (N * Sxy - Sx * Sy) / den
+print("The Correlation coefficient is %0.3f" % r)
+# Regression coefficient (slope) of Y on X
+byx = (N * Sxy - Sx * Sy) / (N * Sx2 - Sx**2)
+# Means
+xmean = Sx / N
+ymean = Sy / N
+print("The Regression line Y on X is ::: y = %0.3f + %0.3f (x-%0.3f)" % (ymean, byx, 
+xmean))
+# Scatter plot of data points
+plt.scatter(x, y)
+# Regression function and plot
+def Reg(xv):
+  return ymean + byx * (xv - xmean)
+x_plot = np.linspace(min(x), max(x), 51)
+y_plot = Reg(x_plot)
+plt.plot(x_plot, y_plot, 'r')
+plt.xlabel('x-data')
+plt.ylabel('y-data')
+plt.legend(['Regression Line', 'Data points'])
+plt.grid(True)
+plt.show()
+```
 # Output 
+```
+Enter x values (space separated): 25 28 35 32 31 36 29 38 34 32
+Enter y values (space separated): 43 46 49 41 36 32 3 30 33 39
+The Correlation coefficient is -0.020
+The Regression line Y on X is ::: y = 35.200 + -0.064 (x-32.000)
+
+<img width="693" height="529" alt="Screenshot 2025-11-18 134842" src="https://github.com/user-attachments/assets/58dba0b4-8a4c-44e5-b910-f400916e2e9e" />
+```
