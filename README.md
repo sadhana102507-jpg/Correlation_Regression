@@ -82,8 +82,8 @@ Enter x values (space separated): 25 28 35 32 31 36 29 38 34 32
 Enter y values (space separated): 43 46 49 41 36 32 3 30 33 39
 The Correlation coefficient is -0.020
 The Regression line Y on X is ::: y = 35.200 + -0.064 (x-32.000)
-
-<img width="693" height="529" alt="Screenshot 2025-11-18 134842" src="https://github.com/user-attachments/assets/58dba0b4-8a4c-44e5-b910-f400916e2e9e" />
 ```
+<img width="693" height="529" alt="Screenshot 2025-11-18 134842" src="https://github.com/user-attachments/assets/8069539b-79c1-4121-9a10-60d99e23aa68" />
+
 # Result
 The correlation and regression for data analysis of objects from feeder using probability distribution are calculated.
