@@ -75,6 +75,7 @@ plt.legend(['Regression Line', 'Data points'])
 plt.grid(True)
 plt.show()
 ```
+https://colab.research.google.com/drive/1E2Qlb3rZgWSM9Rz1n4mhxEsasEEdWTsO?usp=sharing
 # Output 
 ```
 Enter x values (space separated): 25 28 35 32 31 36 29 38 34 32
@@ -84,3 +85,5 @@ The Regression line Y on X is ::: y = 35.200 + -0.064 (x-32.000)
 
 <img width="693" height="529" alt="Screenshot 2025-11-18 134842" src="https://github.com/user-attachments/assets/58dba0b4-8a4c-44e5-b910-f400916e2e9e" />
 ```
+# Result
+The correlation and regression for data analysis of objects from feeder using probability distribution are calculated.
